@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@justa/br-validators": [
+        "dist/justa/br-validators"
+      ],
+      "@justa/br-validators/*": [
+        "dist/justa/br-validators/*"
+      ]
+    }
   }
 }
