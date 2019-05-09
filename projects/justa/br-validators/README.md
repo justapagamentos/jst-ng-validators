@@ -38,6 +38,10 @@ export class AppComponent {
 }
 ```
 
+**Example on Stackblitz:**
+
+- [https://stackblitz.com/edit/ng-validators-jst](https://stackblitz.com/edit/ng-validators-jst)
+
 ## Available custom validators
 
 - validateDate (format: DD/MM/YYYY)
@@ -48,6 +52,8 @@ export class AppComponent {
 ## Build (dev only)
 
 Run `ng build @justa/validators` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+To build the package, run `ng build @justa/br-validators`.
 
 ## License
 

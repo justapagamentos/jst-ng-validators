@@ -1,6 +1,6 @@
 {
   "name": "@justa/ng-validators",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "peerDependencies": {
     "@angular/common": "^5.0.0 || ^6.0.0 || ^7.0.0",
     "@angular/core": "^5.0.0 || ^6.0.0 || ^7.0.0",
@@ -31,7 +31,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/justapagamentos/jst-ng-validators.git"
+    "url": "https://github.com/justapagamentos/jst-ng-validators.git",
+    "directory": "projects/justa/br-validators/"
   },
   "bugs": {
     "url": "https://github.com/justapagamentos/jst-ng-validators/issues"
