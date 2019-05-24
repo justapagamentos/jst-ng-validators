@@ -48,6 +48,7 @@ export class AppComponent {
 - validateCNPJ (format: xx.xxx.xxx/xxxx-xx | xxxxxxxxxxxxxx)
 - validateCPF (format: xxx.xxx.xxx-xx | xxxxxxxxxxx)
 - validatePhone (format: (xx)xxxxx-xxxx | (xx)xxxx-xxxx | xxxxxxxxxx)
+- validateURL (format: http[s]://lol.com)
 
 ## Build (dev only)
 
