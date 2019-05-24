@@ -8,6 +8,10 @@ import * as Moment from "moment";
 
 const moment = Moment;
 
+const urlPattern = new RegExp(
+  /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/
+);
+
 /**
  * @description remove all non digits caracters
  */
@@ -60,9 +64,20 @@ function validatePhone(control: AbstractControl): ValidationErrors | null {
     : null;
 }
 
+/**
+ * @description validateURL for FormBuilder
+ */
+function validateURL(control: AbstractControl): ValidationErrors | null {
+  const controlValue = control.value;
+  return !urlPattern.test(controlValue)
+    ? { isInvalid: { expected: true, message: "URL Inválida." } }
+    : null;
+}
+
 export const jstValidators = {
   validateDate,
   validateCNPJ,
   validateCPF,
-  validatePhone
+  validatePhone,
+  validateURL
 };
