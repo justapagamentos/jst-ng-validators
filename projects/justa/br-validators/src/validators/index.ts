@@ -74,10 +74,27 @@ function validateURL(control: AbstractControl): ValidationErrors | null {
     : null;
 }
 
+/**
+ * @description Provide a validator for key text that do not accept special characters or spaces
+ */
+function validateTextKey(control: AbstractControl): ValidationErrors | null {
+  const controlValue = control.value;
+  const pattern = /([\u00C0-\u00FF ])/g;
+  return controlValue.match(pattern)
+    ? {
+        isInvalid: {
+          expected: true,
+          message: "Não é permitido caracteres especiais ou espaços neste campo"
+        }
+      }
+    : null;
+}
+
 export const jstValidators = {
   validateDate,
   validateCNPJ,
   validateCPF,
   validatePhone,
-  validateURL
+  validateURL,
+  validateTextKey
 };
