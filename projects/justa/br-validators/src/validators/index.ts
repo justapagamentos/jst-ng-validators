@@ -5,6 +5,12 @@ import {
   isValidPhone
 } from "@brazilian-utils/validators";
 import * as Moment from "moment";
+import { groupOfAllowed, groupOfNotAllowed } from "./regexList";
+
+interface InvalidContent {
+  expected: boolean;
+  message: string;
+}
 
 const moment = Moment;
 
@@ -79,15 +85,21 @@ function validateURL(control: AbstractControl): ValidationErrors | null {
  */
 function validateTextKey(control: AbstractControl): ValidationErrors | null {
   const controlValue = control.value;
-  const pattern = /([\u00C0-\u00FF ])/g;
-  return controlValue.match(pattern)
-    ? {
-        isInvalid: {
-          expected: true,
-          message: "Não é permitido caracteres especiais ou espaços neste campo"
-        }
-      }
-    : null;
+
+  let match: any;
+
+  match = controlValue.match(groupOfAllowed);
+
+  // tslint:disable-next-line: curly
+  if (!match) match = controlValue.match(groupOfNotAllowed);
+
+  const contentWhenInvalid: InvalidContent = {
+    expected: true,
+    // tslint:disable-next-line: quotemark
+    message: "Não é permitido caracteres especiais ou espaços neste campo"
+  };
+
+  return match ? { isInvalid: contentWhenInvalid } : null;
 }
 
 export const jstValidators = {
