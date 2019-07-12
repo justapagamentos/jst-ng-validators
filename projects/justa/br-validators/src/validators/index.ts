@@ -48,16 +48,23 @@ function validateCPF(control: AbstractControl): ValidationErrors | null {
 /**
  * @description valicação de data seguindo modelo do FormBuilder
  */
-function validateDate(control: AbstractControl) {
-  const date = control.value.split("/");
-  const year = date[2];
-  const validateYear = (year: string) => /(?:(?:19|20)[0-9]{2})/.test(year);
+export function validateDate(control: AbstractControl) {
+  const value = control.value;
 
-  if (moment(control.value, "DD/MM/YYYY").isValid() && validateYear(year)) {
-    return null;
-  } else {
-    return { message: "Data inválida. O ano precisa ter 4 dígitos" };
+  if (value.length >= 8) {
+    const date = moment(value, "DD/MM/YYYY");
+
+    if (date.year()) {
+      const year = date.year().toString();
+      const validateYear = (year: string) => /(?:(?:19|20)[0-9]{2})/.test(year);
+
+      if (validateYear(year)) {
+        return null;
+      }
+    }
   }
+
+  return { message: "Data inválida." };
 }
 
 /**
