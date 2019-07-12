@@ -50,8 +50,9 @@ function validateCPF(control: AbstractControl): ValidationErrors | null {
  */
 function validateDate(control: AbstractControl) {
   const value = control.value;
+  const valueOnlyNumbers = value.replace(/[^0-9]/g, "");
 
-  if (value.length >= 8) {
+  if (valueOnlyNumbers.length >= 8) {
     const date = moment(value, "DD/MM/YYYY");
 
     if (date.year()) {
