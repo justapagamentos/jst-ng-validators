@@ -48,7 +48,7 @@ function validateCPF(control: AbstractControl): ValidationErrors | null {
 /**
  * @description valicação de data seguindo modelo do FormBuilder
  */
-export function validateDate(control: AbstractControl) {
+function validateDate(control: AbstractControl) {
   const value = control.value;
 
   if (value.length >= 8) {
