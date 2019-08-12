@@ -1,6 +1,6 @@
 # Jst Validators ![npm](https://img.shields.io/npm/v/@justa/ng-validators.svg) ![David](https://img.shields.io/david/justapagamentos/jst-ng-validators.svg) ![GitHub](https://img.shields.io/github/license/justapagamentos/jst-ng-validators.svg) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@justa/ng-validators.svg)
 
-> 🚨 This repo has been to [Justa Angular Library](https://github.com/justapagamentos/justa-angular-library), see the projects folder to get the source code.
+> 🚨 This repo has been moved to [Justa Angular Library](https://github.com/justapagamentos/justa-angular-library), see the projects folder to get the source code.
 
 ---
 
